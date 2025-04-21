@@ -1,27 +1,39 @@
 package com.relogios.relogios_SP.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 @Entity
-@Table
+@Table(name = "relogio")
 public class Relogio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int numberRelogio;
-    private String addressRelogio;
-    private double longitude;
-    private double latitude;
+    @Column(name = "numberRelogio")
+    private String numberRelogio;
 
-    public Relogio(Long id, int i, String s, double longitude, double latitude) {
+    @Column(name = "addressRelogio", columnDefinition = "TEXT")
+    private String addressRelogio;
+
+    @Column(name = "latitude")
+    private String latitude;
+
+    @Column(name = "longitude")
+    private String longitude;
+
+    public Relogio() {
     }
+
+    public Relogio(Long id, String numberRelogio, String addressRelogio, String longitude, String latitude) {
+        this.id = id;
+        this.numberRelogio = numberRelogio;
+        this.addressRelogio = addressRelogio;
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
+    // getters e setters abaixo
 
     public Long getId() {
         return id;
@@ -31,11 +43,11 @@ public class Relogio {
         this.id = id;
     }
 
-    public int getNumberRelogio() {
+    public String getNumberRelogio() {
         return numberRelogio;
     }
 
-    public void setNumberRelogio(int numberRelogio) {
+    public void setNumberRelogio(String numberRelogio) {
         this.numberRelogio = numberRelogio;
     }
 
@@ -47,19 +59,19 @@ public class Relogio {
         this.addressRelogio = addressRelogio;
     }
 
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
