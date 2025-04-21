@@ -50,5 +50,4 @@ public class RelogioService {
         repository.deleteById(id);
     }
 
-
 }
