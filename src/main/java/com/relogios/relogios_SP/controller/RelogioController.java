@@ -37,4 +37,9 @@ public class RelogioController {
     public void deletar(@PathVariable Long id) {
         relogioService.deletar(id);
     }
+
+    @GetMapping("/buscar/{numberRelogio}")
+    public RelogioDTO buscarPorNumberRelogio(@PathVariable String numberRelogio) {
+        return relogioService.buscarPorNumberRelogio(numberRelogio);
+    }
 }

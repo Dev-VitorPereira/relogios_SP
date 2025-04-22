@@ -50,4 +50,11 @@ public class RelogioService {
         repository.deleteById(id);
     }
 
+    public RelogioDTO buscarPorNumberRelogio(String numberRelogio) {
+        Relogio relogio = repository.findByNumberRelogio(numberRelogio)
+                .orElseThrow(() -> new RuntimeException("Relógio não encontrado"));
+
+        return RelogioMapper.toDTO(relogio);
+    }
+
 }
