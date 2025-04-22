@@ -25,10 +25,14 @@ public class Relogio {
     public Relogio() {
     }
 
-    public Relogio(Long id, String numberRelogio, String addressRelogio) {
+    public Relogio(Long id, String numberRelogio, String addressRelogio
+//            ,String longitude, String latitude
+    ) {
         this.id = id;
         this.numberRelogio = numberRelogio;
         this.addressRelogio = addressRelogio;
+//        this.longitude = longitude;
+//        this.latitude = latitude;
     }
 
     // getters e setters abaixo

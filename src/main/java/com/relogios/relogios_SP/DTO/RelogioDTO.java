@@ -4,4 +4,7 @@ public record RelogioDTO(
         Long id,
         String numberRelogio,
         String addressRelogio
+//        ,
+//        String latitude,
+//        String longitude
 ) { }
