@@ -39,8 +39,6 @@ public class RelogioService {
 
         existente.setNumberRelogio(dto.numberRelogio());
         existente.setAddressRelogio(dto.addressRelogio());
-        existente.setLatitude(dto.latitude());
-        existente.setLongitude(dto.longitude());
 
         Relogio atualizado = repository.save(existente);
         return RelogioMapper.toDTO(atualizado);

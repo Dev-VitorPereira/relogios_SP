@@ -9,9 +9,7 @@ public class RelogioMapper {
         return new RelogioDTO(
                 relogio.getId(),
                 relogio.getNumberRelogio(),
-                relogio.getAddressRelogio(),
-                relogio.getLatitude(),
-                relogio.getLongitude()
+                relogio.getAddressRelogio()
         );
     }
 
@@ -19,9 +17,7 @@ public class RelogioMapper {
         return new Relogio(
                 dto.id(),
                 dto.numberRelogio(),
-                dto.addressRelogio(),
-                dto.longitude(),
-                dto.latitude()
+                dto.addressRelogio()
         );
     }
 }
