@@ -3,7 +3,7 @@ package com.relogios.relogios_SP.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "relogio")
+@Table(name = "relogios")
 public class Relogio {
 
     @Id
