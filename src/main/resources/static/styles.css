@@ -1,8 +1,14 @@
-/* Reset básico para garantir consistência entre navegadores */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Cores da JCDecaux */
+:root {
+    --azul-escuro: #00335b;
+    --azul-claro: #0076b6;
 }
 
 body {
@@ -22,11 +28,20 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: #5c6bc0;
+.header {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.logo {
+    height: 250px;
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--azul-escuro);
 }
 
 .input-container {
@@ -52,7 +67,7 @@ h1 {
 .input-container button {
     padding: 10px;
     font-size: 1rem;
-    background-color: #5c6bc0;
+    background-color: var(--azul-escuro);
     color: white;
     border: none;
     border-radius: 4px;
@@ -61,7 +76,7 @@ h1 {
 }
 
 .input-container button:hover {
-    background-color: #3f4a89;
+    background-color: var(--azul-claro);
 }
 
 .lista-container {
@@ -70,6 +85,7 @@ h1 {
 
 .lista-container ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .relogioItem {
@@ -88,6 +104,22 @@ h1 {
 }
 
 .relogioItem strong {
-    color: #5c6bc0;
+    color: var(--azul-escuro);
 }
 
+/* Estilo do botão de imprimir */
+.botao-imprimir {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: var(--azul-escuro);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-imprimir:hover {
+    background-color: var(--azul-claro);
+}

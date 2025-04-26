@@ -4,11 +4,13 @@ let listaRelogios = [];
 // Função para adicionar um relógio na lista
 function adicionarRelogio() {
     const numberRelogioInput = document.getElementById('numberRelogio');
+    const manutencaoInput = document.getElementById('manutencao');
     const numberRelogio = numberRelogioInput.value;
+    const manutencao = manutencaoInput.value;
 
-    // Verifica se o número do relógio não está vazio
-    if (!numberRelogio) {
-        alert("Por favor, insira o número do relógio.");
+    // Verifica se o número do relógio e a manutenção não estão vazios
+    if (!numberRelogio || !manutencao) {
+        alert("Por favor, insira o número do relógio e a descrição da manutenção.");
         return;
     }
 
@@ -25,7 +27,8 @@ function adicionarRelogio() {
             const formattedRelogio = {
                 numberRelogio: data.numberRelogio,
                 addressRelogio: formatAddress(data.addressRelogio),
-                tela: data.addressRelogio.includes('TELA') ? 'TELA: MRI' : '' // Verifica se contém "TELA"
+                tela: data.addressRelogio.includes('TELA') ? 'TELA: MRI' : '', // Verifica se contém "TELA"
+                manutencao: manutencao // Adiciona a descrição da manutenção
             };
 
             // Adiciona o relógio à lista
@@ -37,8 +40,9 @@ function adicionarRelogio() {
             alert('Não foi possível encontrar os dados do relógio.');
         });
 
-    // Limpa o campo de entrada após adicionar
+    // Limpa os campos de entrada após adicionar
     numberRelogioInput.value = '';
+    manutencaoInput.value = '';
 }
 
 // Função para formatar o endereço de forma simplificada
@@ -53,11 +57,35 @@ function atualizarLista() {
     const listaUl = document.getElementById('listaRelogiosUl');
     listaUl.innerHTML = '';  // Limpa a lista antes de atualizá-la
 
-    // Adiciona os itens da lista na página
+    // Adiciona os itens da lista na página com um número sequencial
     listaRelogios.forEach((relogio, index) => {
         const li = document.createElement('li');
         li.classList.add('relogioItem');
-        li.innerHTML = `<strong>Relógio ${relogio.numberRelogio} ${relogio.addressRelogio} `;
+        li.innerHTML = `<strong>${index + 1} - Relógio ${relogio.numberRelogio} ${relogio.addressRelogio} - Manutenção: ${relogio.manutencao}</strong>`;
         listaUl.appendChild(li);
     });
+}
+function imprimirLista() {
+    const lista = document.getElementById('listaRelogiosUl').innerHTML;
+    const janelaImpressao = window.open('', '', 'width=800,height=600');
+
+    janelaImpressao.document.write(`
+        <html>
+            <head>
+                <title>Imprimir Lista de Relógios</title>
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    ul { list-style-type: none; padding: 0; }
+                    li { margin-bottom: 10px; font-size: 18px; }
+                </style>
+            </head>
+            <body>
+                <h2>Lista de Relógios:</h2>
+                <ul>${lista}</ul>
+            </body>
+        </html>
+    `);
+
+    janelaImpressao.document.close();
+    janelaImpressao.print();
 }

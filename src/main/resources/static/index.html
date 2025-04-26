@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Relógios</title>
+    <title>Rota Relógios - JCDecaux</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Cadastro de Relógios</h1>
+        <!-- Header com o logo -->
+        <header class="header">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_ka4r7vRhxGY8apSpo2ipFSx_7tU2E5zr9qHLv9_maOpfc=s900-c-k-c0x00ffffff-no-rj" alt="JCDecaux Logo" class="logo">
+            <h1>Rota Relógios</h1>
+        </header>
 
+        <!-- Inputs -->
         <div class="input-container">
             <label for="numberRelogio">Número do Relógio:</label>
             <input type="text" id="numberRelogio" placeholder="Digite o número do relógio">
+
+            <label for="manutencao">Tipo de Manutenção:</label>
+            <input type="text" id="manutencao" placeholder="Digite a manutenção realizada">
+
             <button onclick="adicionarRelogio()">Adicionar</button>
         </div>
 
+        <!-- Lista -->
         <div id="listaRelogios" class="lista-container">
             <h2>Lista de Relógios:</h2>
             <ul id="listaRelogiosUl">
                 <!-- A lista de relógios será exibida aqui -->
             </ul>
+            <button onclick="imprimirLista()" class="botao-imprimir">Imprimir Lista</button>
         </div>
     </div>
 
     <script src="scripts.js"></script>
 </body>
 </html>
-
