@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Relógios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Relógios</h1>
+
+        <div class="input-container">
+            <label for="numberRelogio">Número do Relógio:</label>
+            <input type="text" id="numberRelogio" placeholder="Digite o número do relógio">
+            <button onclick="adicionarRelogio()">Adicionar</button>
+        </div>
+
+        <div id="listaRelogios" class="lista-container">
+            <h2>Lista de Relógios:</h2>
+            <ul id="listaRelogiosUl">
+                <!-- A lista de relógios será exibida aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
